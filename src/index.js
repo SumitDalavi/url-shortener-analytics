@@ -43,8 +43,7 @@ app.get('/:shortCode', async (req, res) => {
     res.redirect(302, url);
 });
 
-async function start() {
-    await producer.connect();
-    app.listen(3000, () => console.log('Shortener API on port 3000'));
+if (require.main === module) {
+    start();
 }
-start();
+module.exports = { app, redis, producer, pgPool };
