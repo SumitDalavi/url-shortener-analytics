@@ -48,4 +48,26 @@ describe('URL Shortener API', () => {
         expect(res.header.location).toEqual('https://example.com');
         expect(producer.send).toHaveBeenCalled();
     });
+
+    it('should handle cache miss and fetch from DB', async () => {
+        // Redis does not have it, DB does
+        pgPool.query.mockResolvedValueOnce({ rows: [{ destination: 'https://db-example.com' }] });
+
+        const res = await request(app).get('/dbcode');
+
+        expect(res.statusCode).toEqual(302);
+        expect(res.header.location).toEqual('https://db-example.com');
+        expect(producer.send).toHaveBeenCalled();
+        // Check if it got cached
+        const cached = await redis.get('url:dbcode');
+        expect(cached).toEqual('https://db-example.com');
+    });
+
+    it('should return 404 if not found in DB', async () => {
+        pgPool.query.mockResolvedValueOnce({ rows: [] });
+
+        const res = await request(app).get('/404code');
+
+        expect(res.statusCode).toEqual(404);
+    });
 });
