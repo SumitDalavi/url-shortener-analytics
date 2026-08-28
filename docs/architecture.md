@@ -6,14 +6,14 @@ The following Mermaid.js sequence diagram maps the core workflow and interaction
 ```mermaid
 sequenceDiagram
     client->>API: POST /shorten
-API->>Redis: Cache check
-API->>Postgres: Save URL
+API->>In-Memory LRU Cache / Node.js Maps: Cache check
+API->>SQLite: Save URL
 API-->>client: return short_url
-API-)Kafka: Publish Analytics Event
+API-)Embedded Event Emitter / Batching Queue: Publish Analytics Event
 ```
 
 ## Component Breakdown
-- **Core Technology**: Node.js, Kafka
+- **Core Technology**: Node.js, Embedded Event Emitter / Batching Queue
 - **Design Paradigm**: Emphasizes high availability, fault tolerance, and security.
 
 ## Security & Scaling Considerations
