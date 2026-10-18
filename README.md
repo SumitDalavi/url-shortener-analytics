@@ -4,6 +4,10 @@
 # URL Shortener & Analytics 🔗📈
 
 [![Release](https://img.shields.io/github/v/release/SumitDalavi/url-shortener-analytics?color=blue&logo=github)](https://github.com/SumitDalavi/url-shortener-analytics/releases)
+[![Release Workflow](https://github.com/SumitDalavi/url-shortener-analytics/actions/workflows/release.yml/badge.svg)](https://github.com/SumitDalavi/url-shortener-analytics/actions/workflows/release.yml)
+[![SBOM](https://img.shields.io/badge/SBOM-SPDX%20JSON-blueviolet?logo=spdx)](https://github.com/SumitDalavi/url-shortener-analytics/releases)
+
+[![Release](https://img.shields.io/github/v/release/SumitDalavi/url-shortener-analytics?color=blue&logo=github)](https://github.com/SumitDalavi/url-shortener-analytics/releases)
 [![SBOM](https://img.shields.io/badge/SBOM-SPDX%20JSON-blueviolet?logo=spdx)](https://github.com/SumitDalavi/url-shortener-analytics/releases)
 
 > High-performance URL shortener tracking millions of clicks with real-time Kafka-driven analytics and Redis caching.
@@ -119,7 +123,7 @@ To comply with strict portfolio audit requirements, we explicitly define the bou
 - **Fully Implemented:** The core state machine, API routes, database schemas, and integration tests are real and fully functional.
 - **Mocked / Demo Mode:** None. Completely self-contained.
 
-## Release & Verification
+## Release & Security Verification
 
 The project includes an automated DevSecOps release pipeline (`.github/workflows/release.yml`) triggered on semantic version tags (`v*.*.*`).
 
@@ -139,3 +143,10 @@ gh release view v0.1.0 --repo SumitDalavi/url-shortener-analytics
 gh release download v0.1.0 --repo SumitDalavi/url-shortener-analytics --pattern "sbom.spdx.json"
 cat sbom.spdx.json | jq .
 ```
+
+## Documentation
+
+- [Architecture](docs/ARCHITECTURE.md)
+- [Runbook](docs/runbook.md)
+- [Decisions](docs/decisions.md)
+- [Changelog](docs/changelog.md)
