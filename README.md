@@ -1,5 +1,3 @@
-> **NOTE:** This repository is an archival lab or partial prototype. It is not actively maintained and should not be used as a reference for production-grade deployments or performance benchmarks.
-
 # URL Shortener & Analytics 🔗📈
 
 [![CI Pipeline](https://github.com/SumitDalavi/url-shortener-analytics/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/SumitDalavi/url-shortener-analytics/actions/workflows/ci.yml)
@@ -122,7 +120,7 @@ To comply with strict portfolio audit requirements, we explicitly define the bou
 - **Fully Implemented:** The core state machine, API routes, database schemas, and integration tests are real and fully functional.
 - **Mocked / Demo Mode:** None. Completely self-contained.
 
-## Release & Security Verification
+## 🔒 Release & Security Verification
 
 The project includes an automated DevSecOps release pipeline (`.github/workflows/release.yml`) triggered on semantic version tags (`v*.*.*`).
 
@@ -136,10 +134,10 @@ Each release automatically:
 ### Verifying the Release
 ```bash
 # Verify release via GitHub CLI
-gh release view v0.1.0 --repo SumitDalavi/url-shortener-analytics
+gh release view v0.2.0 --repo SumitDalavi/url-shortener-analytics
 
 # Download and inspect SBOM
-gh release download v0.1.0 --repo SumitDalavi/url-shortener-analytics --pattern "sbom.spdx.json"
+gh release download v0.2.0 --repo SumitDalavi/url-shortener-analytics --pattern "sbom.spdx.json"
 cat sbom.spdx.json | jq .
 ```
 
@@ -168,9 +166,17 @@ Enterprise deployment with production-grade backends, security scans, and contai
 - **Production Orchestration:** Mount secrets via Kubernetes Secrets or cloud secret managers with atomic config reload support.
 - **Release Verification:** Checksums and SPDX SBOM available on [GitHub Releases](https://github.com/SumitDalavi/url-shortener-analytics/releases).
 
-## Documentation
+## 📚 Documentation
 
 - [Architecture](docs/ARCHITECTURE.md)
 - [Runbook](docs/runbook.md)
 - [Decisions](docs/decisions.md)
 - [Changelog](docs/changelog.md)
+
+## 👨‍💻 Author
+
+**Sumit Dalavi** — Senior DevSecOps / Platform Engineer  
+[GitHub](https://github.com/SumitDalavi) | [LinkedIn](https://in.linkedin.com/in/sumit-dalavi-762838129)
+
+---
+*Built with a focus on robust patterns, not toy demos.*
