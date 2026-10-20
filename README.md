@@ -1,14 +1,14 @@
 > **NOTE:** This repository is an archival lab or partial prototype. It is not actively maintained and should not be used as a reference for production-grade deployments or performance benchmarks.
 
-
 # URL Shortener & Analytics 🔗📈
 
-[![Release](https://img.shields.io/github/v/release/SumitDalavi/url-shortener-analytics?color=blue&logo=github)](https://github.com/SumitDalavi/url-shortener-analytics/releases)
+[![CI Pipeline](https://github.com/SumitDalavi/url-shortener-analytics/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/SumitDalavi/url-shortener-analytics/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/SumitDalavi/url-shortener-analytics?color=0969da&label=release&logo=github)](https://github.com/SumitDalavi/url-shortener-analytics/releases)
 [![Release Workflow](https://github.com/SumitDalavi/url-shortener-analytics/actions/workflows/release.yml/badge.svg)](https://github.com/SumitDalavi/url-shortener-analytics/actions/workflows/release.yml)
-[![SBOM](https://img.shields.io/badge/SBOM-SPDX%20JSON-blueviolet?logo=spdx)](https://github.com/SumitDalavi/url-shortener-analytics/releases)
-
-[![Release](https://img.shields.io/github/v/release/SumitDalavi/url-shortener-analytics?color=blue&logo=github)](https://github.com/SumitDalavi/url-shortener-analytics/releases)
-[![SBOM](https://img.shields.io/badge/SBOM-SPDX%20JSON-blueviolet?logo=spdx)](https://github.com/SumitDalavi/url-shortener-analytics/releases)
+[![GHCR Container](https://img.shields.io/badge/ghcr.io-v0.2.0-blue?logo=docker&logoColor=white)](https://github.com/SumitDalavi/url-shortener-analytics/pkgs/container/url-shortener-analytics)
+[![Node.js](https://img.shields.io/badge/Node.js-20+-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org)
+[![SBOM](https://img.shields.io/badge/SBOM-SPDX%202.3-blueviolet?logo=spdx)](https://github.com/SumitDalavi/url-shortener-analytics/releases/tag/v0.2.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 > High-performance URL shortener tracking millions of clicks with real-time Kafka-driven analytics and Redis caching.
 
@@ -80,7 +80,6 @@ curl -X POST http://localhost:8080/api/trigger -H "Content-Type: application/jso
 
 ---
 *Built with a focus on robust patterns, not toy demos.*
-
 
 ---
 
