@@ -11,14 +11,10 @@
 > High-performance URL shortener tracking millions of clicks with real-time Kafka-driven analytics and Redis caching.
 
 ## The Problem
-## Problem Statement
-URL shorteners that synchronously write click analytics suffer from database locking under load.
+URL shorteners that synchronously write click analytics suffer from database connection pool exhaustion and table locks during high-traffic viral bursts.
 
 ## Architecture & Solution
-Analytics events are fired asynchronously to an EventEmitter buffer and flushed to SQLite in discrete batches, ensuring redirects are never blocked. Simple CRUD applications fail when subjected to high throughput, race conditions, or massive data sets.
-
-## The Solution
-This project implements a robust microservice architecture designed to handle these specific edge cases. By utilizing advanced paradigms like idempotency keys, advisory locks, or optimized caching layers, this service guarantees data integrity under load.
+This service decouples redirection from telemetry: redirect lookups are served in single-digit milliseconds via an optimized cache layer, while click analytics are dispatched asynchronously into an event buffer and flushed in discrete batches.
 
 ```text
 ┌──────────────┐      ┌───────────────┐      ┌───────────────┐
